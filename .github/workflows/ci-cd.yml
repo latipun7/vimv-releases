@@ -59,9 +59,6 @@ jobs:
             artifact-name: vimv-aarch64-unknown-linux-gnu
             cargo-target: aarch64-unknown-linux-gnu
             linker: gcc-aarch64-linux-gnu
-          - os: ubuntu-latest
-            artifact-name: vimv-aarch64-linux-android
-            cargo-target: aarch64-linux-android
           - os: macos-latest
             artifact-name: vimv-x86_64-apple-darwin
             cargo-target: x86_64-apple-darwin
@@ -83,10 +80,6 @@ jobs:
         run: |
           sudo apt-get -y update
           sudo apt-get -y install ${{ matrix.linker }}
-
-      - name: 🛣️ Set Linker Path
-        if: matrix.cargo-target == 'aarch64-linux-android'
-        run: echo "$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin" >> $GITHUB_PATH
 
       - name: ♻️ Manage Build Cache
         uses: actions/cache@v3
