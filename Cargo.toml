@@ -12,6 +12,6 @@ readme = "readme.md"
 [dependencies]
 arguably = "2.2.0"
 edit = "0.1.4"
-trash = "3.0.1"
+trash = "3.0.6"
 rand = "0.8.5"
-colored = "2.0"
+colored = "2.0.4"
